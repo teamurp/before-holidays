@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<style type="text/css">
+		.menu {
+			background-image: url(menu.jpg);
+			background-size: 100%;
+			height: 960px;
+			background-position: 0% 50%;
+		}
+
+		.play {
+			border: 5px solid #217337;
+			border-radius: 15px;
+			box-shadow: 0px 10px 20px rgba(0,0,0,0.25);
+			position: absolute;
+			top: 100px;
+			left: 100px;
+		}
+
+		.hod {
+			border: 5px solid #2c56c9;
+			border-radius: 15px;
+			box-shadow: 0px 10px 20px rgba(0,0,0,0.25);
+			position: absolute;
+			top: 225px;
+			left: 100px;
+		}
+
+		.menu_hod {
+			background-image: url(ход_игры.jpg);
+			background-size: 100%;
+			background-position: 0% 50%;
+			height: 960px;
+			display: none;
+		}
+
+		.skip {
+			border: 5px solid #c48d00;
+			border-radius: 15px;
+			box-shadow: 0px 10px 20px rgba(0,0,0,0.25);
+			position: absolute;
+			top: 100px;
+			left: 100px;
+		}
+
+		.main {
+			background-image: url(bg.png);
+			background-size: 100%
+		}
+		.loc1 {
+			background-image: url(bg2.jpg);
+			background-size: 100%;
+		}
+
+		.loc2 {
+			background-image: url(bg2.png);
+			background-size: 100%;
+			background-position: 0% 50%
+		}
+
+		.loc3 {
+			background-image: url(bg3.png);
+			background-size: 100%;
+		}
+
+		.shop {
+			height: 450px;
+			width: 525px;
+			position: absolute;
+			top: 150px;
+			left: 100px;
+			background-image: url(shop.png);
+			background-size: 100% 100%
+		}
+
+		.school {
+			height: 500px;
+			width: 500px;
+			position: absolute;
+			top: 400px;
+			left: 1250px;
+			background-image: url(school.png);
+			background-size: auto 100%
+		}
+
+		.gym {
+			height: 300px;
+			width: 625px;
+			position: absolute;
+			top: 50px;
+			left: 1050px;
+			background-image: url(gym.png);
+			background-size: 100% 100%;
+			background-position: 10%
+		}
+
+		.player {
+			height: 250px;
+			width: 200px;
+			position: absolute;
+			top: 600px;
+			left: 650px;
+			transition: 0.5s;
+			background-image: url('student.png');
+			background-size: auto 100%
+		}
+
+		.loc1_player {
+			top: 550px;
+			left: 600px;
+			height: 800px;
+			width: 600px;
+			position: absolute;
+			transition: 0.5s;
+			background-image: url('student.png');
+			background-size: auto 100%
+		}
+
+		.loc1_message {
+			height: 300px;
+			width: 500px;
+			position: absolute;
+			top: 300px;
+			left: 1000px;
+			display: none;
+			background-image: url(message.png);
+			background-size: 100% 100%
+		}
+
+		.list {
+			height: 400px;
+			width: 350px;
+			position: absolute;
+			display: none;
+			top: 25px;
+			left: 25px
+		}
+
+		.pen {
+			height: 100px;
+			width: 100px;
+			position: absolute;
+			top: 210px;
+			left: 650px;
+			background-image: url(pen.png);
+			background-size: 100% 100%;
+			transform: rotate(45deg);
+			filter: blur(0.8px);
+		}
+
+		.pencil {
+			height: 100px;
+			width: 100px;
+			position: absolute;
+			top: 525px;
+			left: 350px;
+			background-image: url(pencil.png);
+			background-size: 100% 100%;
+			transform: rotate(-45deg);
+			filter: blur(0.5px);
+		}
+
+		.eraser {
+			height: 25px;
+			width: 50px;
+			position: absolute;
+			top: 750px;
+			left: 1250px;
+			background-image: url(eraser.png);
+			background-size: 100% 100%;
+			filter: blur(1px);
+			transform: rotate(20deg);
+		}
+
+		.ruler {
+			height: 50px;
+			width: 200px;
+			position: absolute;
+			top: 260px;
+			left: 1400px;
+			background-image: url(ruler.png);
+			background-size: 100% 100%;
+			filter: blur(1px);
+		}
+
+		.divider {
+			height: 110px;
+			width: 50px;
+			position: absolute;
+			top: 630px;
+			left: 1780px;
+			background-image: url(divider.png);
+			background-size: 100% 100%;
+			transform: rotate(90deg);
+			filter: blur(1px);
+		}
+
+		.test {
+			height: 840px;
+			width: 760px;
+			position: absolute;
+			top: 50px;
+			left: 580px
+		}
+
+		.question {
+			height: 350px;
+			width: 700px;
+			margin-right: auto;
+			margin-left: auto;
+		}
+
+		.answer {
+			height: 100px;
+			width: 700px;
+			margin-right: auto;
+			margin-left: auto;
+			margin-top: 10px
+		}
+
+		.right-answer {
+			height: 100px;
+			width: 700px;
+			margin-right: auto;
+			margin-left: auto;
+			margin-top: 10px
+		}
+
+		.loc2_teacher {
+			height: 1300px;
+			width: 550px;
+			position: absolute;
+			top: 100px;
+			left: 1200px;
+			background-image: url(teacher.png);
+			background-size: 100% 100%
+		}
+
+		.loc2_message {
+			height: 500px;
+			width: 650px;
+			position: absolute;
+			top: 400px;
+			left: 700px;
+			display: none;
+			background-image: url(message2.png);
+			background-size: 100% 100%
+
+		}
+
+		.results {
+			height: 420px;
+			width: 840px;
+			position: absolute;
+			left: 540px;
+			top: 100px
+		}
+
+		.coach {
+			height: 300px;
+			width: 225px;
+			position: absolute;
+			top: 600px;
+			left: 1600px;
+			transition: 0.5s;
+			background-image: url(coach.png);
+			background-size: 100% 100%
+		}
+
+		.loc3_player {
+			height: 300px;
+			width: 225px;
+			position: absolute;
+			top: 600px;
+			left: 100px;
+			transition: 0.5s;
+			background-image: url(loc3_student.png);
+			background-size: auto 100%
+		}
+
+		.loc3_message {
+			height: 300px;
+			width: 500px;
+			position: absolute;
+			top: 350px;
+			left: 1400px;
+			display: none;
+			background-image: url(message3.png);
+			background-size: 100% 100%
+		}
+
+		.end {
+			background-image: url(bg4.jpg);
+			background-size: 100%;
+			height: 960px
+		}
+
+		
+	</style>
+</head>
+<body>
+	<div class="menu col-12">
+		<button class="btn btn-success p-3 play"><h1 style="font-family: v_CCZoinks; width: 500px" class="text-center mx-auto">Играть</h1></button>
+		<button class="btn btn-primary p-3 hod"><h1 style="font-family: v_CCZoinks; width: 500px" class="text-center mx-auto">Ход игры</h1></button>
+	</div>
+	<div class="menu_hod col-12">
+		<button class="btn btn-warning p-3 skip"><h1 style="font-family: v_CCZoinks; width: 500px; color: white" class="text-center mx-auto">Выйти</h1></button>
+	</div>
+	<div class="main" style="display: none">
+		<div class="col-12" style="height: 960px">
+			<div class="shop">
+			</div>
+			<div class="school">
+			</div>
+			<div class="gym">
+			</div>
+			<div class="player">
+			</div>
+			<div class="inventory bg-warning rounded p-3" style="border: 3px solid #c48d00; position: absolute; top: 600px; box-shadow: 0px 10px 20px rgba(0,0,0,0.25);">
+				<h1 style="font-family: v_CCZoinks; color: white" class="text-center">Инвентарь</h1>
+				<div class="row">
+					<div style="height: 150px; width: 150px; border: 3px solid #c48d00" class="rounded bg-warning penal mx-1">
+						
+					</div>
+					<div style="height: 150px; width: 150px; border: 3px solid #c48d00" class="rounded bg-warning markk mx-1">
+						
+					</div>
+					<div style="height: 150px; width: 150px; border: 3px solid #c48d00" class="rounded bg-warning plus mx-1">
+						
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		
+	</div>
+	<div class="loc1 col-12 p-0" style="height: 960px; display: none">
+		<div class="pen">
+			
+		</div>
+		<div class="pencil">
+			
+		</div>
+		<div class="eraser">
+			
+		</div>
+		<div class="ruler">
+			
+		</div>
+		<div class="divider">
+			
+		</div>
+		<div class="loc1_player">
+			
+		</div>
+		<div class="loc1_message">
+			<p style="margin-top: 30px; width: 475px; font-family: v_CCZoinks; font-size: 30px" class="text-center mx-auto">Перед тем, как написать тест, мне надо найти ластик, ручку, карандаш, линейку и циркуль. Надо найти их за 30 секунд.</p>
+		</div>
+		<div class="list bg-danger p-3" style="border: 5px solid #963030; border-radius: 15px; box-shadow: 0px 10px 20px rgba(0,0,0,0.25)">
+			<h1 style="font-family: v_CCZoinks; color: white">Время: <span class="loc1_time_txt"></span></h1>
+			<h1 style="font-family: v_CCZoinks; color: white" class="eraser_txt">1. Ластик</h1>
+			<h1 style="font-family: v_CCZoinks; color: white" class="pen_txt">2. Ручка</h1>
+			<h1 style="font-family: v_CCZoinks; color: white" class="pencil_txt">3. Карандаш</h1>
+			<h1 style="font-family: v_CCZoinks; color: white" class="ruler_txt">4. Линейка</h1>
+			<h1 style="font-family: v_CCZoinks; color: white" class="divider_txt">5. Циркуль</h1>
+		</div>
+	</div>
+	<div class="loc2 col-12 p-0" style="height: 960px; display: none">
+		<div class="loc2_teacher">
+			
+		</div>
+		<div class="loc2_message">
+			<h1 style="margin-top: 175px; width: 600px; font-family: v_CCZoinks" class="text-center mx-auto">Здравствуй! Как ты уже знаешь, сегодня у нас тест. Ответь на 10 вопросов за 10 секунд на каждый. Если не успеешь, переходишь на следующий вопрос. Итак, начинай! Время пошло</h1>
+		</div>
+		<div class="bg-success p-3 loc2_time_box" style="border: 5px solid #217337; border-radius: 15px; box-shadow: 0px 10px 20px rgba(0,0,0,0.25); width: 400px; position: absolute; top: 25px; left: 25px">
+			<h1 class="text-center" style="font-family: v_CCZoinks; color: white">Время: <span class="loc2_time_txt"></span></h1>
+		</div>
+		
+		<div class="bg-white test p-3" style="display: none;">
+			<div class="question bg-primary rounded p-3">
+				<h1 style="font-family: Gabriola; color: white;" class="font-weight-bold">Вопрос 1: В каком веке правил Петр I?</h1>
+			</div>
+			<div class="answer bg-dark rounded p-3">
+				<h1 style="font-family: Gabriola; color: white" class="font-weight-bold">а) В 14-15</h1>
+			</div>
+			<div class="answer bg-dark rounded p-3">
+				<h1 style="font-family: Gabriola; color: white" class="font-weight-bold">б) В 19-20</h1>
+			</div>
+			<div class="right-answer bg-dark rounded p-3">
+				<h1 style="font-family: Gabriola; color: white" class="font-weight-bold">в) в 17-18</h1>
+			</div>
+			<div class="answer bg-dark rounded p-3">
+				<h1 style="font-family: Gabriola; color: white" class="font-weight-bold">г) в 15-16</h1>
+			</div>
+		</div>
+		<div class="bg-white test p-3" style="display: none;">
+			<div class="question bg-primary rounded p-3">
+				<h1 style="font-family: Gabriola; color: white;" class="font-weight-bold">Вопрос 2: Перевод слова frustrating?</h1>
+			</div>
+			<div class="right-answer bg-dark rounded p-3">
+				<h1 style="font-family: Gabriola; color: white" class="font-weight-bold">а) Разачаровывающий</h1>
+			</div>
+			<div class="answer bg-dark rounded p-3">
+				<h1 style="font-family: Gabriola; color: white" class="font-weight-bold">б) Раздражающий</h1>
+			</div>
+			<div class="answer bg-dark rounded p-3">
+				<h1 style="font-family: Gabriola; color: white" class="font-weight-bold">в) Удивительный</h1>
+			</div>
+			<div class="answer bg-dark rounded p-3">
+				<h1 style="font-family: Gabriola; color: white" class="font-weight-bold">г) Утомляющий</h1>
+			</div>
+		</div>
+		<div class="bg-white test p-3" style="display: none;">
+			<div class="question bg-primary rounded p-3">
+				<h1 style="font-family: Gabriola; color: white;" class="font-weight-bold">Вопрос 3: Дата открытия Северной Америки?</h1>
+			</div>
+			<div class="right-answer bg-dark rounded p-3">
+				<h1 style="font-family: Gabriola; color: white" class="font-weight-bold">а) 12 октября 1492 года</h1>
+			</div>
+			<div class="answer bg-dark rounded p-3">
+				<h1 style="font-family: Gabriola; color: white" class="font-weight-bold">б) 29 марта 1632 года</h1>
+			</div>
+			<div class="answer bg-dark rounded p-3">
+				<h1 style="font-family: Gabriola; color: white" class="font-weight-bold">в) 11 декабря 1860 года</h1>
+			</div>
+			<div class="answer bg-dark rounded p-3">
+				<h1 style="font-family: Gabriola; color: white" class="font-weight-bold">г) 4 июля 1776 года</h1>
+			</div>
+		</div>
+		<div class="bg-white test p-3" style="display: none;">
+			<div class="question bg-primary rounded p-3">
+				<h1 style="font-family: Gabriola; color: white;" class="font-weight-bold">Вопрос 4: Выберите слово, где допущена ошибка</h1>
+			</div>
+			<div class="answer bg-dark rounded p-3">
+				<h1 style="font-family: Gabriola; color: white" class="font-weight-bold">а) Выращивать</h1>
+			</div>
+			<div class="answer bg-dark rounded p-3">
+				<h1 style="font-family: Gabriola; color: white" class="font-weight-bold">б) Удовлетворять</h1>
+			</div>
+			<div class="answer bg-dark rounded p-3">
+				<h1 style="font-family: Gabriola; color: white" class="font-weight-bold">в) Предприниматель</h1>
+			</div>
+			<div class="right-answer bg-dark rounded p-3">
+				<h1 style="font-family: Gabriola; color: white" class="font-weight-bold">г) Учавствующий</h1>
+			</div>
+		</div>
+		<div class="bg-white test p-3" style="display: none;">
+			<div class="question bg-primary rounded p-3">
+				<h1 style="font-family: Gabriola; color: white;" class="font-weight-bold">Вопрос 5: Кто создатель повести "Капитанская дочка?"</h1>
+			</div>
+			<div class="answer bg-dark rounded p-3">
+				<h1 style="font-family: Gabriola; color: white" class="font-weight-bold">а) Лев Николаевич Толстой</h1>
+			</div>
+			<div class="right-answer bg-dark rounded p-3">
+				<h1 style="font-family: Gabriola; color: white" class="font-weight-bold">б) Александр Сергеевич Пушкин</h1>
+			</div>
+			<div class="answer bg-dark rounded p-3">
+				<h1 style="font-family: Gabriola; color: white" class="font-weight-bold">в) Иван Сергеевич Тургенев</h1>
+			</div>
+			<div class="answer bg-dark rounded p-3">
+				<h1 style="font-family: Gabriola; color: white" class="font-weight-bold">г) Василий Андреевич Жуковский</h1>
+			</div>
+		</div>
+		<div class="bg-white test p-3" style="display: none;">
+			<div class="question bg-primary rounded p-3">
+				<h1 style="font-family: Gabriola; color: white;" class="font-weight-bold">Вопрос 6: В какой стране придумали шахматы?</h1>
+			</div>
+			<div class="right-answer bg-dark rounded p-3">
+				<h1 style="font-family: Gabriola; color: white" class="font-weight-bold">а) в Индии</h1>
+			</div>
+			<div class="answer bg-dark rounded p-3">
+				<h1 style="font-family: Gabriola; color: white" class="font-weight-bold">б) в Китае</h1>
+			</div>
+			<div class="answer bg-dark rounded p-3">
+				<h1 style="font-family: Gabriola; color: white" class="font-weight-bold">в) в Японии</h1>
+			</div>
+			<div class="answer bg-dark rounded p-3">
+				<h1 style="font-family: Gabriola; color: white" class="font-weight-bold">г) в Англии</h1>
+			</div>
+		</div>
+		<div class="bg-white test p-3" style="display: none;">
+			<div class="question bg-primary rounded p-3">
+				<h1 style="font-family: Gabriola; color: white;" class="font-weight-bold">Вопрос 7: Наивысшая точка России?</h1>
+			</div>
+			<div class="answer bg-dark rounded p-3">
+				<h1 style="font-family: Gabriola; color: white" class="font-weight-bold">а) гора Победа</h1>
+			</div>
+			<div class="right-answer bg-dark rounded p-3">
+				<h1 style="font-family: Gabriola; color: white" class="font-weight-bold">б) гора Эльбрус</h1>
+			</div>
+			<div class="answer bg-dark rounded p-3">
+				<h1 style="font-family: Gabriola; color: white" class="font-weight-bold">в) гора Джомолунгма</h1>
+			</div>
+			<div class="answer bg-dark rounded p-3">
+				<h1 style="font-family: Gabriola; color: white" class="font-weight-bold">г) Ключевская Сопка</h1>
+			</div>
+		</div>
+		<div class="bg-white test p-3" style="display: none;">
+			<div class="question bg-primary rounded p-3">
+				<h1 style="font-family: Gabriola; color: white;" class="font-weight-bold">Вопрос 8: HCl - формула чего?</h1>
+			</div>
+			<div class="answer bg-dark rounded p-3">
+				<h1 style="font-family: Gabriola; color: white" class="font-weight-bold">а) хлорной кислоты</h1>
+			</div>
+			<div class="answer bg-dark rounded p-3">
+				<h1 style="font-family: Gabriola; color: white" class="font-weight-bold">б) хлористой кислоты</h1>
+			</div>
+			<div class="answer bg-dark rounded p-3">
+				<h1 style="font-family: Gabriola; color: white" class="font-weight-bold">в) серной кислоты</h1>
+			</div>
+			<div class="right-answer bg-dark rounded p-3">
+				<h1 style="font-family: Gabriola; color: white" class="font-weight-bold">г) соляной кислоты</h1>
+			</div>
+		</div>
+		<div class="bg-white test p-3" style="display: none;">
+			<div class="question bg-primary rounded p-3">
+				<h1 style="font-family: Gabriola; color: white;" class="font-weight-bold">Вопрос 9: 2^8=?</h1>
+			</div>
+			<div class="right-answer bg-dark rounded p-3">
+				<h1 style="font-family: Gabriola; color: white" class="font-weight-bold">а) 256</h1>
+			</div>
+			<div class="answer bg-dark rounded p-3">
+				<h1 style="font-family: Gabriola; color: white" class="font-weight-bold">б) 128</h1>
+			</div>
+			<div class="answer bg-dark rounded p-3">
+				<h1 style="font-family: Gabriola; color: white" class="font-weight-bold">в) 512</h1>
+			</div>
+			<div class="answer bg-dark rounded p-3">
+				<h1 style="font-family: Gabriola; color: white" class="font-weight-bold">г) 1024</h1>
+			</div>
+		</div>
+		<div class="bg-white test p-3" style="display: none;">
+			<div class="question bg-primary rounded p-3">
+				<h1 style="font-family: Gabriola; color: white;" class="font-weight-bold">Вопрос 10: Правильная классификация пауков</h1>
+			</div>
+			<div class="answer bg-dark rounded p-3">
+				<h1 style="font-family: Gabriola; color: white" class="font-weight-bold">а) Животные->Членистоногие->Насекомые->Паукообразные->Пауки</h1>
+			</div>
+			<div class="answer bg-dark rounded p-3">
+				<h1 style="font-family: Gabriola; color: white" class="font-weight-bold">б) Животные->Членистоногие->Насекомые->Пауки</h1>
+			</div>
+			<div class="right-answer bg-dark rounded p-3">
+				<h1 style="font-family: Gabriola; color: white" class="font-weight-bold">в) Животные->Членистоногие->Паукообразные->Пауки</h1>
+			</div>
+			<div class="answer bg-dark rounded p-3">
+				<h1 style="font-family: Gabriola; color: white" class="font-weight-bold">г) Животные->Насекомые->Членистоногие->Паукообразные->Пауки</h1>
+			</div>
+		</div>
+		<div class="results bg-white p-3" style="display: none; box-shadow: 0px 10px 20px rgba(0,0,0,0.25);">
+			<h1 style="font-family: Gabriola" class="font-weight-bold text-center">Итоговый тест по учебному году 2019-2020</h1>
+			<h1 style="font-family: Gabriola" class="font-weight-bold">Ты набрал: <span class="points_txt"></span></h1>
+			<h1 style="font-family: Gabriola" class="font-weight-bold">Оценка: <span class="mark_txt" style="background-color: none"></span></h1>
+			<h1 style="font-family: Gabriola" class="font-weight-bold">Результат: <span class="result_txt"></span></h1>
+			<h1 style="font-family: Gabriola" class="font-weight-bold fail_txt"></h1>
+			<h1 style="font-family: Gabriola" class="font-weight-bold text-right">(Нажми сюда, чтобы продолжить)</h1>
+		</div>
+	</div>
+	<div class="loc3 col-12" style="height: 960px; display: none">
+		<div class="bg-primary p-3 loc3_time_box" style="border: 5px solid #2c56c9; border-radius: 15px; box-shadow: 0px 10px 20px rgba(0,0,0,0.25); width: 400px; position: absolute; top: 25px; left: 25px">
+			<h1 class="text-center" style="font-family: v_CCZoinks; color: white">Время: <span class="loc3_time_txt"></span></h1>
+		</div>
+		<div class="coach">
+			
+		</div>
+		<div class="loc3_player">
+			
+		</div>
+		<div class="loc3_message">
+			<h2 style="margin-top: 25px; width: 450px; font-family: v_CCZoinks" class="text-center mx-auto">Сегодня у нас сдача норматива по бегу. Ты должен добежать до меня за 10 секунд, чтобы сдать, иначе вылетишь отсюда!</h2>
+		</div>
+	</div>
+	<div class="end col-12" style="padding-top: 100px; display: none;">
+		<h1 class="text-center" style="font-family: v_CCZoinks; color: white; font-size: 50px">Ну вот и все! Поздравляю, ты успешно прошел игру! Желаю тебе хорошо сдать экзамены, контрольные работы и с успехом завершить этот учебный год. Хорошего отдыха, проведи лето незабываемо и с пользой.</h1>
+	</div>
+	<script type="text/javascript">
+		let menu_hod = document.querySelector('.menu_hod');
+		let menu = document.querySelector('.menu');
+
+		let loc1 = document.querySelector('.loc1');
+		let loc2 = document.querySelector('.loc2');
+		let loc3 = document.querySelector('.loc3');
+		let end = document.querySelector('.end');
+
+		let main = document.querySelector('.main');
+		let player = document.querySelector('.player');
+		let shop = document.querySelector('.shop');
+		let school = document.querySelector('.school');
+		let gym = document.querySelector('.gym');
+
+		let penal = document.querySelector('.penal');
+		let markk = document.querySelector('.markk');
+		let plus = document.querySelector('.plus');
+
+		let shop_num = 0;
+		let school_num = 0;
+		let gym_num = 0;
+
+		//кнопки в меню
+		let play = document.querySelector('.play');
+		let hod = document.querySelector('.hod');
+		let skip = document.querySelector('.skip');
+
+		play.onclick = function() {
+			menu.style.display = 'none';
+			main.style.display = 'block';
+		}
+
+		hod.onclick = function() {
+			menu.style.display = 'none';
+			menu_hod.style.display = 'block';
+		}
+
+		skip.onclick = function() {
+			menu_hod.style.display = 'none';
+			menu.style.display = 'block'
+		}
+
+		let changeLocation1 = function() {
+			main.style.display = 'none';
+			loc1.style.display = 'block';
+			setTimeout(showMessage, 1000);
+		}
+
+		let changeLocation2 = function() {
+			main.style.display = 'none';
+			loc2.style.display = 'block';
+			setTimeout(loc2_showMessage, 1000);
+		}
+
+		let changeLocation3 = function() {
+			main.style.display = 'none';
+			loc3.style.display = 'block';
+			setTimeout(loc3_showMessage, 1000);
+		}
+
+		shop.onclick = function() {
+			player.style.top = 300 + 'px';
+			player.style.left = 350 + 'px';
+			setTimeout(changeLocation1, 1500);
+		}
+		school.onclick = function() {
+			if(shop_num==0){
+				alert('Сначала купи канцелярские товары в магазине!')
+			}
+			if(shop_num==1){
+				player.style.top = 650 + 'px';
+				player.style.left = 1400 + 'px';
+				setTimeout(changeLocation2, 1500);
+			}
+			
+		}
+		gym.onclick = function() {
+			if((shop_num==1)&&(school_num==0)){
+				alert('Сначала сдай тест в школе!')
+			}
+			if(((shop_num==0)&&(school_num==0))||(school_num==1)){
+				player.style.top = 100 + 'px';
+				player.style.left = 1150 + 'px';
+				setTimeout(changeLocation3, 1500);
+			}
+		}
+		//1 локация, магазин
+		let loc1_player = document.querySelector('.loc1_player');
+		let loc1_message = document.querySelector('.loc1_message');
+		let list = document.querySelector('.list');
+
+		let pen = document.querySelector('.pen');
+		let pencil = document.querySelector('.pencil');
+		let eraser = document.querySelector('.eraser');
+		let ruler = document.querySelector('.ruler');
+		let divider = document.querySelector('.divider');
+
+		let pen_txt = document.querySelector('.pen_txt');
+		let pencil_txt = document.querySelector('.pencil_txt');
+		let eraser_txt = document.querySelector('.eraser_txt');
+		let ruler_txt = document.querySelector('.ruler_txt');
+		let divider_txt = document.querySelector('.divider_txt');
+
+		let score = 0;
+		let loc1_time_txt = document.querySelector('.loc1_time_txt');
+		let loc1_time = 30;
+		loc1_time_txt.innerHTML = loc1_time;
+
+		let showMessage = function() {
+			loc1_message.style.display = 'block';
+			list.style.display = 'block';
+			setTimeout(hideMessage, 3000)
+		}
+
+		let hideMessage = function() {
+			loc1_message.style.display = 'none';
+			let loc1_timer = function() {
+				loc1_time = loc1_time - 1;
+				loc1_time_txt.innerHTML = loc1_time;
+				if (loc1_time==0){
+					alert('Время вышло! Ты опоздал на контрольную работу! Начинай игру заново');
+					loc1.style.display = 'none';
+					main.style.display = 'block';
+					player.style.top = 600 + 'px';
+					player.style.left = 650 + 'px';
+					clearInterval(stop);
+				}
+			}
+			let stop = setInterval(loc1_timer, 1000);
+			pen.onclick = function() {
+				pen.style.display = 'none';
+				score = score + 1;
+				pen_txt.style.textDecoration = 'line-through';
+				if (score==5){
+					alert('Молодец! Ты нашел все предметы. А теперь беги в школу!');
+					loc1.style.display = 'none';
+					main.style.display = 'block';
+					player.style.top = 600 + 'px';
+					player.style.left = 650 + 'px';
+					shop_num = 1;
+					penal.style.backgroundImage = 'url(penal.png)';
+					penal.style.backgroundSize = '100% 100%';
+					clearInterval(stop)
+				}
+			}
+			pencil.onclick = function() {
+				pencil.style.display = 'none';
+				score = score + 1;
+				pencil_txt.style.textDecoration = 'line-through';
+				if (score==5){
+					alert('Молодец! Ты нашел все предметы. А теперь беги в школу!');
+					loc1.style.display = 'none';
+					main.style.display = 'block';
+					player.style.top = 600 + 'px';
+					player.style.left = 650 + 'px';
+					shop_num = 1;
+					penal.style.backgroundImage = 'url(penal.png)';
+					penal.style.backgroundSize = '100% 100%';
+					clearInterval(stop)
+				}
+			}
+			eraser.onclick = function() {
+				eraser.style.display = 'none';
+				score = score + 1;
+				eraser_txt.style.textDecoration = 'line-through';
+				if (score==5){
+					alert('Молодец! Ты нашел все предметы. А теперь беги в школу!');
+					loc1.style.display = 'none';
+					main.style.display = 'block';
+					player.style.top = 600 + 'px';
+					player.style.left = 650 + 'px';
+					shop_num = 1;
+					penal.style.backgroundImage = 'url(penal.png)';
+					penal.style.backgroundSize = '100% 100%';
+					clearInterval(stop)
+				}
+			}
+			ruler.onclick = function() {
+				ruler.style.display = 'none';
+				score = score + 1;
+				ruler_txt.style.textDecoration = 'line-through';
+				if (score==5){
+					alert('Молодец! Ты нашел все предметы. А теперь беги в школу!');
+					loc1.style.display = 'none';
+					main.style.display = 'block';
+					player.style.top = 600 + 'px';
+					player.style.left = 650 + 'px';
+					shop_num = 1;
+					penal.style.backgroundImage = 'url(penal.png)';
+					penal.style.backgroundSize = '100% 100%';
+					clearInterval(stop)
+				}
+			}
+			divider.onclick = function() {
+				divider.style.display = 'none';
+				score = score + 1;
+				divider_txt.style.textDecoration = 'line-through';
+				if (score==5){
+					alert('Молодец! Ты нашел все предметы. А теперь беги в школу!');
+					loc1.style.display = 'none';
+					main.style.display = 'block';
+					player.style.top = 600 + 'px';
+					player.style.left = 650 + 'px';
+					shop_num = 1;
+					penal.style.backgroundImage = 'url(penal.png)';
+					penal.style.backgroundSize = '100% 100%';
+					clearInterval(stop)
+				}
+			}
+		}
+		//loc2, школа
+		let test = document.querySelectorAll('.test');
+		let answer = document.querySelectorAll('.answer');
+		let results = document.querySelector('.results');
+		let rightAnswer = document.querySelectorAll('.right-answer');
+		let loc2_message = document.querySelector('.loc2_message');
+		let loc2_teacher = document.querySelector('.loc2_teacher');
+		let loc2_time_txt = document.querySelector('.loc2_time_txt');
+		let loc2_time_box = document.querySelector('.loc2_time_box');
+		let fail_txt = document.querySelector('.fail_txt');
+		let loc2_time = 10;
+		loc2_time_txt.innerHTML = loc2_time;
+		let index = 0;
+		let loc2_score = 0;
+		let result_txt = document.querySelector('.result_txt');
+		let points_txt = document.querySelector('.points_txt');
+		let mark_txt = document.querySelector('.mark_txt');
+		let pass = 'Экзамен сдал';
+		let fail = 'Экзамен не сдал';
+
+		
+		let loc2_showMessage = function() {
+			loc2_message.style.display = 'block';
+			setTimeout(showTest, 5000)
+		}
+		let showTest = function() {
+			test[0].style.display = 'block';
+			loc2_message.style.display = 'none';
+			loc2_teacher.style.display = 'none';
+			let loc2_timer = function() {
+				loc2_time = loc2_time - 1;
+				loc2_time_txt.innerHTML = loc2_time;
+				if(loc2_time == 0){
+					test[index].style.display = 'none';
+					index = index + 1;
+					if(index<=9){
+						test[index].style.display = 'block';
+					}
+					if(index>9){
+						results.style.display = 'block';
+						clearInterval(loc2_stop);
+						loc2_time_box.style.display = 'none';
+						points_txt.innerHTML = loc2_score;
+						if(loc2_score>=8){
+							let mark = 'A';
+							mark_txt.innerHTML = mark;
+							result_txt.innerHTML = pass;
+							school_num = 1;
+							markk.style.backgroundImage = 'url(a_grade.png)';
+							markk.style.backgroundSize = '100% 100%';
+						}
+						if((loc2_score>=6)&&(loc2_score<8)){
+							let mark = 'B';
+							mark_txt.innerHTML = mark;
+							result_txt.innerHTML = pass;
+							school_num = 1;
+							markk.style.backgroundImage = 'url(b_grade.png)';
+							markk.style.backgroundSize = '100% 100%';
+						}
+						if((loc2_score>=4)&&(loc2_score<6)){
+							let mark = 'C';
+							mark_txt.innerHTML = mark;
+							result_txt.innerHTML = pass;
+							school_num = 1;
+							markk.style.backgroundImage = 'url(c_grade.png)';
+							markk.style.backgroundSize = '100% 100%';
+						}
+						if(loc2_score<4){
+							let mark = 'F';
+							mark_txt.innerHTML = mark;
+							result_txt.innerHTML = fail;
+							markk.style.backgroundImage = 'url(f_grade.png)';
+							markk.style.backgroundSize = '100% 100%';
+							fail_txt.innerHTML = 'Приходи сдавать тест в другой раз'
+						}
+					}
+					loc2_time = 10;
+				}
+			}
+			let loc2_stop = setInterval(loc2_timer, 1000);
+			for(let i=0; i<9; i++){
+				rightAnswer[i].onclick = function() {
+					test[index].style.display = 'none';
+					index = index + 1;
+					test[index].style.display = 'block';
+					loc2_time = 10;
+					loc2_score = loc2_score + 1;
+				}
+			}
+			rightAnswer[9].onclick = function() {
+				test[index].style.display = 'none';
+				loc2_score = loc2_score + 1;
+				results.style.display = 'block';
+				clearInterval(loc2_stop);
+				loc2_time_box.style.display = 'none';
+				points_txt.innerHTML = loc2_score;
+				if(loc2_score>=8){
+					let mark = 'A';
+					mark_txt.innerHTML = mark;
+					result_txt.innerHTML = pass;
+					school_num = 1;
+					markk.style.backgroundImage = 'url(a_grade.png)';
+					markk.style.backgroundSize = '100% 100%';
+				}
+				if((loc2_score>=6)&&(loc2_score<8)){
+					let mark = 'B';
+					mark_txt.innerHTML = mark;
+					result_txt.innerHTML = pass;
+					school_num = 1;
+					markk.style.backgroundImage = 'url(b_grade.png)';
+					markk.style.backgroundSize = '100% 100%';
+				}
+				if((loc2_score>=4)&&(loc2_score<6)){
+					let mark = 'C';
+					mark_txt.innerHTML = mark;
+					result_txt.innerHTML = pass;
+					school_num = 1;
+					markk.style.backgroundImage = 'url(c_grade.png)';
+					markk.style.backgroundSize = '100% 100%';
+				}
+				if(loc2_score<4){
+					let mark = 'F';
+					mark_txt.innerHTML = mark;
+					result_txt.innerHTML = fail;
+					markk.style.backgroundImage = 'url(f_grade.png)';
+					markk.style.backgroundSize = '100% 100%';
+					fail_txt.innerHTML = 'Приходи сдавать тест в другой раз'
+				}
+			}
+			
+			for(let i=0; i<27; i++){
+				answer[i].onclick = function() {
+					test[index].style.display = 'none';
+					index = index + 1;
+					test[index].style.display = 'block';
+					loc2_time = 10;
+				}
+			}
+			for(let i=27; i<30; i++){
+				answer[i].onclick = function() {
+					test[index].style.display = 'none';
+					results.style.display = 'block';
+					clearInterval(loc2_stop);
+					loc2_time_box.style.display = 'none';
+					points_txt.innerHTML = loc2_score;
+					if(loc2_score>=8){
+						let mark = 'A';
+						mark_txt.innerHTML = mark;
+						result_txt.innerHTML = pass;
+						school_num = 1;
+						markk.style.backgroundImage = 'url(a_grade.png)';
+						markk.style.backgroundSize = '100% 100%';
+					}
+					if((loc2_score>=6)&&(loc2_score<8)){
+						let mark = 'B';
+						mark_txt.innerHTML = mark;
+						result_txt.innerHTML = pass;
+						school_num = 1;
+						markk.style.backgroundImage = 'url(b_grade.png)';
+						markk.style.backgroundSize = '100% 100%';
+					}
+					if((loc2_score>=4)&&(loc2_score<6)){
+						let mark = 'C';
+						mark_txt.innerHTML = mark;
+						result_txt.innerHTML = pass;
+						school_num = 1;
+						markk.style.backgroundImage = 'url(c_grade.png)';
+						markk.style.backgroundSize = '100% 100%';
+					}
+					if(loc2_score<4){
+						let mark = 'F';
+						mark_txt.innerHTML = mark;
+						result_txt.innerHTML = fail;
+						markk.style.backgroundImage = 'url(f_grade.png)';
+						markk.style.backgroundSize = '100% 100%';
+						fail_txt.innerHTML = 'Приходи сдавать тест в другой раз'
+					}
+				}
+			}
+			results.onclick = function() {
+				if((school_num==1)&&(gym_num==1)){
+					end.style.display = 'block';
+					loc2.style.display = 'none';
+				}
+				if(gym_num==0){
+					loc2.style.display = 'none';
+					main.style.display = 'block';
+					player.style.top = 600 + 'px';
+					player.style.left = 650 + 'px';
+				}
+				if(school_num==0){
+					results.style.display = 'none';
+					loc2_teacher.style.display = 'block';
+					loc2_time_box.style.display = 'block';
+					loc2_time = 10;
+					loc2_time_txt.innerHTML = loc2_time;
+					index = 0;
+					fail_txt.innerHTML = null;
+				}
+			}
+		}
+		
+		
+
+		//loc3, спортивный зал
+		let loc3_time_txt = document.querySelector('.loc3_time_txt');
+		let loc3_time = 10;
+		let loc3_player = document.querySelector('.loc3_player');
+		let loc3_message = document.querySelector('.loc3_message');
+		loc3_time_txt.innerHTML = loc3_time;
+
+		let player_pos = 100;
+		loc3_player.style.left = player_pos + 'px';
+
+		let loc3_showMessage = function() {
+			loc3_message.style.display = 'block';
+			setTimeout(loc3_hideMessage, 3000);
+		}
+		let loc3_hideMessage = function() {
+			loc3_message.style.display = 'none';
+			let loc3_timer = function() {
+				loc3_time = loc3_time - 1;
+				loc3_time_txt.innerHTML = loc3_time;
+				if (loc3_time == 0){
+					clearInterval(loc3_stop);
+					alert('Ты не успел добежать! Экзамен не сдан. Можешь прийти сдавать в другой раз');
+					loc3.style.display = 'none';
+					main.style.display = 'block';
+					player.style.top = 600 + 'px';
+					player.style.left = 650 + 'px';
+					loc3_time = 10;
+					loc3_time_txt.innerHTML = loc3_time;
+					loc3_player.style.top = 600 + 'px';
+					loc3_player.style.left = 100 + 'px';
+					player_pos = 100;
+				}
+			}
+			let loc3_stop = setInterval(loc3_timer, 1000);
+			loc3_player.onclick = function() {
+				player_pos = player_pos + 100;
+				loc3_player.style.left = player_pos + 'px';
+				if (player_pos==1500){
+					clearInterval(loc3_stop);
+					alert('Так держать! Ты сдал экзамен');
+					if(school_num==0){
+						loc3.style.display = 'none';
+						main.style.display = 'block';
+						gym_num = 1;
+						plus.style.backgroundImage = 'url(mark.png)';
+						plus.style.backgroundSize = '100% 100%';
+						player.style.top = 600 + 'px';
+						player.style.left = 650 + 'px';
+					}
+					if(school_num==1){
+						loc3.style.display = 'none';
+						end.style.display = 'block';
+					}
+				}
+			}
+		}
+		
+
+	</script>
+</body>
+</html>
